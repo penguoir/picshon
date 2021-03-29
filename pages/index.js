@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import axios from "axios";
 
 export default function IndexPage() {
@@ -12,52 +11,17 @@ export default function IndexPage() {
   };
 
   return (
-    <>
-      <div className="container">
-        <div className="text-wrapper">
-          <h1 className="word">{word}</h1>
+    <div className="container mx-auto h-screen flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-3xl mb-4">{word}</h1>
 
-          <button className="button" onClick={_getNewWord}>
-            Get a new word
-          </button>
-        </div>
+        <button
+          className="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+          onClick={_getNewWord}
+        >
+          Get a new word
+        </button>
       </div>
-
-    <style jsx global>{`
-      body { margin: 0 }
-      .button {
-        background-color: rgb(16, 185, 129);
-        color: white;
-        outline: 0;
-        border: 0;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-        font-weight: 600;
-        line-height: 24px;
-        padding: 8px 16px;
-        font-size: 16px;
-      }
-
-      .button:hover {
-        background-color: rgb(4, 120, 87);
-      }
-
-      .container {
-        max-width: 800px;
-        width: 95vw;
-        margin: 0 auto;
-        height: 100vh;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        text-align: center
-      }
-    `}</style>
-    </>
+    </div>
   );
-};
+}
